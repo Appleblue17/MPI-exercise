@@ -33,16 +33,16 @@ fn compute(exp : Exp) -> Int {
 
 // -----请忽略以下内容-----
 test "第六课练习3" {
-  @test.eq(compute(IntExp(1)), 1)!
-  @test.eq(compute(IntExp(1000)), 1000)!
-  @test.eq(compute(SumExp(IntExp(0), IntExp(0))), 0)!
-  @test.eq(compute(SumExp(IntExp(1), IntExp(1999))), 2000)!
-  @test.eq(compute(SumExp(IntExp(1), SumExp(IntExp(1), IntExp(1)))), 3)!
-  @test.eq(
+  assert_eq!(compute(IntExp(1)), 1)!
+  assert_eq!(compute(IntExp(1000)), 1000)!
+  assert_eq!(compute(SumExp(IntExp(0), IntExp(0))), 0)!
+  assert_eq!(compute(SumExp(IntExp(1), IntExp(1999))), 2000)!
+  assert_eq!(compute(SumExp(IntExp(1), SumExp(IntExp(1), IntExp(1)))), 3)!
+  assert_eq!(
     compute(SumExp(SumExp(IntExp(1), IntExp(1)), SumExp(IntExp(1), IntExp(1)))),
     4,
   )!
-  @test.eq(
+  assert_eq!(
     compute(SumExp(IntExp(1), SumExp(IntExp(1), SumExp(IntExp(1), IntExp(1))))),
     4,
   )!

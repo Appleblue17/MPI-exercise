@@ -7,20 +7,30 @@
 fn 输出乘法表(println : (String) -> Unit) -> Unit {
   // 使用 for 循环
   for i = 1; i < 10; i = i + 1 {
-
+    let mut str = ""
+    for j = 1; j <= i; j = j+1{
+      if i*j < 10{
+        str = str+"\{i} * \{j} =  \{i*j}"
+      }
+      else{
+        str = str+"\{i} * \{j} = \{i*j}"
+      }
+      if j < i { str = str+"  "}
+    }
+    println(str)
   }
 }
 
 test "第七课练习2" {
-  let buffer = Buffer::make(10)
+  let buffer = Buffer::new()
   // 利用以下函数进行输出
   fn println(content : String) -> Unit {
     buffer.write_string(content)
     buffer.write_char('\n')
   }
-
+  
   输出乘法表(println)
-  inspect(
+  inspect!(
     buffer.to_string(),
     content=
       #|1 * 1 =  1
@@ -34,5 +44,5 @@ test "第七课练习2" {
       #|9 * 1 =  9  9 * 2 = 18  9 * 3 = 27  9 * 4 = 36  9 * 5 = 45  9 * 6 = 54  9 * 7 = 63  9 * 8 = 72  9 * 9 = 81
       #|
     ,
-  )!
+  )
 }

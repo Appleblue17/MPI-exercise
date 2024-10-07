@@ -24,7 +24,7 @@ fn pop[T](self : Stack[T]) -> (T?, Stack[T]) {
 struct Queue[T] {
   front : @immut/list.List[T]
   back : @immut/list.List[T]
-} derive(Debug, Show, Eq)
+} derive(Show, Eq)
 
 fn Queue::empty[T]() -> Queue[T] {
   { front: Nil, back: Nil }

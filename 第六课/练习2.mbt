@@ -16,9 +16,9 @@ fn my_fold_left[A, B](list : @immut/list.List[A], f : (B, A) -> B, b : B) -> B {
 // -----请忽略以下内容-----
 
 test "第六课练习2" {
-  @test.eq(my_fold_left(Nil, fn(a, b) { a + b }, 0), 0)!
-  @test.eq(my_fold_left(Nil, fn(a, b) { a + b }, 0), 1)!
-  @test.eq(
+  assert_eq!(my_fold_left(Nil, fn(a, b) { a + b }, 0), 0)!
+  assert_eq!(my_fold_left(Nil, fn(a, b) { a + b }, 0), 1)!
+  assert_eq!(
     my_fold_left(
       Cons("1", Cons("2", Cons("3", Nil))),
       fn(b : String, a) { "(\(b) + \(a))" },

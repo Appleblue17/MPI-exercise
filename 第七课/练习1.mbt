@@ -12,6 +12,9 @@ fn 输出星星(println : (String) -> Unit) -> Unit {
   while i < 5 {
     // 该怎么做呢？
     i = i + 1
+    let mut str: String = ""
+    for j=1; j<=i; j=j+1 { str = str+"*" }
+    println(str)
   }
 }
 
@@ -23,7 +26,7 @@ test "第七课练习1" {
   }
 
   输出星星(println)
-  inspect(
+  inspect!(
     buffer.to_string(),
     content=
       #|*
@@ -33,5 +36,5 @@ test "第七课练习1" {
       #|*****
       #|
     ,
-  )!
+  )
 }

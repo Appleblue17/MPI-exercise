@@ -11,7 +11,7 @@ fn 输出质数表(上限 : Int) -> @immut/list.List[Int] {
 
 test "第七课练习3" {
   let primes_100 = 输出质数表(100).iter().collect() |> @hashset.from_array
-  @test.is_true(
+  assert_true!(
     [
       2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
       73, 79, 83, 89, 97,

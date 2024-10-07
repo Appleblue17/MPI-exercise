@@ -9,7 +9,7 @@ let ex5_value1 : Int = {
 }
 
 // 请将下方代码替换为你对其上方表达式简化值的预测
-let ex5_value1的值 : Int = 0
+let ex5_value1的值 : Int = 3
 
 let ex5_value2 : Int = {
   let ex5_y = 100
@@ -17,7 +17,7 @@ let ex5_value2 : Int = {
 }
 
 // 请将下方代码替换为你对其上方表达式简化值的预测
-let ex5_value2的值 : Int = 0
+let ex5_value2的值 : Int = 100
 
 let ex5_x = 1
 
@@ -26,6 +26,6 @@ let ex5_y = 2
 // -----请忽略以下内容-----
 
 test "第二课练习5" {
-  @test.eq(ex5_value1, ex5_value1的值)!
-  @test.eq(ex5_value2, ex5_value2的值)!
+  assert_eq!(ex5_value1, ex5_value1的值)
+  assert_eq!(ex5_value2, ex5_value2的值)
 }
